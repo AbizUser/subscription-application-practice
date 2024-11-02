@@ -2,11 +2,19 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import Image from "next/image";
 import { cookies } from "next/headers";
 import Link from "next/link";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle
+} from "@/components/ui/card";
+import { Database } from "@/lib/database.types";
 
-const supabase = createServerComponentClient({ cookies }); //SCで呼び出す場合にはcookiesを引数に呼び出す必要がある。
+const supabase = createServerComponentClient<Database>({ cookies }); //SCで呼び出す場合にはcookiesを引数に呼び出す必要がある。※SSR
 
-const getAllLessons =  async () => {  //SSG
+const getAllLessons =  async () => {
   const { data: lessons } = await supabase.from("lesson").select("*");
   return lessons; 
 }
