@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { Button } from './ui/button'
+import AuthServerButton from './Auth/AuthServerButton'
 
 const Header = () => {
   return (
@@ -11,9 +12,9 @@ const Header = () => {
       <Link href={'/pricing'} className='ml-4'>
         <Button variant={"outline"}>価格</Button>
       </Link>
-      <Link href={'/login'} className='ml-auto'>
-        <Button>ログイン</Button>
-      </Link>
+      <div className='ml-auto'>
+        <AuthServerButton />
+      </div>
     </div>
   )
 }
