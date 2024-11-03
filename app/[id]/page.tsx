@@ -1,10 +1,11 @@
-import { createServerComponentClient, SupabaseClient } from '@supabase/auth-helpers-nextjs';
+import { 
+  createServerComponentClient,
+  SupabaseClient } from '@supabase/auth-helpers-nextjs';
 import React from 'react'
 import { cookies } from 'next/headers';
 import { Database } from '@/lib/database.types';
 
 //ジェネリクスで定義することによって型の参照が可能に
-
 
 const getDetailLesson =  async (
   id: number,
@@ -16,7 +17,7 @@ const getDetailLesson =  async (
     .eq("id", id) //idの値によって表示するデータを変更する
     .single();
   return lesson; 
-}
+};
 
 const getPremiumContent =  async (
   id: number,
@@ -33,9 +34,11 @@ const getPremiumContent =  async (
 const LessonDatailPage = async ({ params }: { params: { id: number } }) => {
   const supabase = createServerComponentClient<Database>({ cookies }); //SCで呼び出す場合にはcookiesを引数に呼び出す必要がある。※SSR
   const lesson = await getDetailLesson(params.id, supabase);
-  const video = await getPremiumContent(params.id, supabase)
-  console.log(`lesson:${lesson}`)
-  console.log("lesson:", JSON.stringify(lesson!, null, 2));
+  const video = await getPremiumContent(params.id, supabase);
+  console.log("params :: ", JSON.stringify(params!, null, 2));
+  console.log("supabase :: ", JSON.stringify(supabase!, null, 2));
+  console.log(`lesson :: ${lesson}`)
+  console.log("lesson :: ", JSON.stringify(lesson!, null, 2));
   console.log(`video:${video}`)
 
   return (
