@@ -14,6 +14,7 @@ import { cookies } from 'next/headers';
 import { Database } from '@/lib/database.types';
 import SubscriptionButton from '@/components/checkout/SubscriptionButton';
 import AuthServerButton from '@/components/Auth/AuthServerButton';
+import { Link } from 'lucide-react';
 
 
 interface Plan {
@@ -78,7 +79,12 @@ const PricingPage = async () => {
         <CardFooter>
           {showSubscribeButton && <SubscriptionButton planId={plan.id}/>}
           {showCreateAccountButton && <AuthServerButton/>}
-          {manageSubscriptionButton && <Button>サブスクリプションを管理する</Button>}
+          {manageSubscriptionButton && 
+            <Button>
+              <Link href='/dashboard'>
+                サブスクリプションを管理する
+              </Link>
+            </Button>}
         </CardFooter>
       </Card>
       ))}
