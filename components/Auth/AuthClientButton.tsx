@@ -1,13 +1,16 @@
 "use client"
 //CC
-import { Session } from 'inspector/promises'
-import { Button } from '../ui/button'
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+// import { Session } from 'inspector/promises'
+import {
+  Session,
+  createClientComponentClient
+} from '@supabase/auth-helpers-nextjs';
+import { Button } from '../ui/button';
 import { useRouter } from 'next/navigation';
 
 const AuthClientButton = ({ session }: { session: Session | null}) => {
-  const supabase = createClientComponentClient();
   const router = useRouter();
+  const supabase = createClientComponentClient();
 
   const handleSignIn = async () => {
     await supabase.auth.signInWithOAuth({

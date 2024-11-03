@@ -8,7 +8,7 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle
+  CardTitle 
 } from "@/components/ui/card";
 import { Database } from "@/lib/database.types";
 
