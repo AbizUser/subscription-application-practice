@@ -13,6 +13,7 @@ import initstripe, { Stripe } from "stripe";
 import { cookies } from 'next/headers';
 import { Database } from '@/lib/database.types';
 import SubscriptionButton from '@/components/checkout/SubscriptionButton';
+import AuthServerButton from '@/components/Auth/AuthServerButton';
 
 
 interface Plan {
@@ -76,22 +77,11 @@ const PricingPage = async () => {
           {plan.price}円 / {plan.interval}</CardContent>
         <CardFooter>
           {showSubscribeButton && <SubscriptionButton planId={plan.id}/>}
-          {showCreateAccountButton && <Button>ログインする</Button>}
+          {showCreateAccountButton && <AuthServerButton/>}
           {manageSubscriptionButton && <Button>サブスクリプションを管理する</Button>}
         </CardFooter>
       </Card>
       ))}
-      
-      {/* <Card className='shadow-md'>
-        <CardHeader>
-          <CardTitle>年額プラン</CardTitle>
-          <CardDescription>Anual</CardDescription>
-        </CardHeader>
-        <CardContent>2500円 / 月</CardContent>
-        <CardFooter>
-          <Button>サブスクリプション契約する</Button>
-        </CardFooter>
-      </Card> */}
     </div>
   )
 }

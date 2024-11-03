@@ -30,9 +30,9 @@ const AuthClientButton = ({ session }: { session: Session | null}) => {
   return (
     <>
     {session ?
-      <Button onClick={handleSignOut}>ログアウト</Button>
+      <Button onClick={handleSignOut}>サインアウト</Button>
     : (
-      <Button onClick={handleSignIn}>ログイン</Button>
+      <Button onClick={handleSignIn}>サインイン</Button>
     )}
     </>
   )
