@@ -13,19 +13,19 @@ export type Database = {
         Row: {
           created_at: string
           description: string | null
-          id: string
+          id: number
           title: string | null
         }
         Insert: {
           created_at?: string
           description?: string | null
-          id?: string
+          id?: number
           title?: string | null
         }
         Update: {
           created_at?: string
           description?: string | null
-          id?: string
+          id?: number
           title?: string | null
         }
         Relationships: []
@@ -33,17 +33,17 @@ export type Database = {
       premium_contents: {
         Row: {
           created_at: string
-          id: string
+          id: number
           video_url: string | null
         }
         Insert: {
           created_at?: string
-          id?: string
+          id?: number
           video_url?: string | null
         }
         Update: {
           created_at?: string
-          id?: string
+          id?: number
           video_url?: string | null
         }
         Relationships: [
@@ -60,7 +60,7 @@ export type Database = {
         Row: {
           created_at: string
           email: string | null
-          id: string
+          id: number
           interval: string | null
           is_subscribed: boolean | null
           stripe_customer: string | null
@@ -68,7 +68,7 @@ export type Database = {
         Insert: {
           created_at?: string
           email?: string | null
-          id?: string
+          id?: number
           interval?: string | null
           is_subscribed?: boolean | null
           stripe_customer?: string | null
@@ -76,7 +76,7 @@ export type Database = {
         Update: {
           created_at?: string
           email?: string | null
-          id?: string
+          id?: number
           interval?: string | null
           is_subscribed?: boolean | null
           stripe_customer?: string | null
