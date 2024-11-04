@@ -13,19 +13,19 @@ export type Database = {
         Row: {
           created_at: string
           description: string | null
-          id: number
+          id: string
           title: string | null
         }
         Insert: {
           created_at?: string
           description?: string | null
-          id?: number
+          id?: string
           title?: string | null
         }
         Update: {
           created_at?: string
           description?: string | null
-          id?: number
+          id?: string
           title?: string | null
         }
         Relationships: []
@@ -33,17 +33,17 @@ export type Database = {
       premium_contents: {
         Row: {
           created_at: string
-          id: number
+          id: string
           video_url: string | null
         }
         Insert: {
           created_at?: string
-          id?: number
+          id?: string
           video_url?: string | null
         }
         Update: {
           created_at?: string
-          id?: number
+          id?: string
           video_url?: string | null
         }
         Relationships: [
