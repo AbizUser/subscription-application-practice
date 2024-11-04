@@ -60,7 +60,7 @@ export type Database = {
         Row: {
           created_at: string
           email: string | null
-          id: number
+          id: string
           interval: string | null
           is_subscribed: boolean | null
           stripe_customer: string | null
@@ -68,7 +68,7 @@ export type Database = {
         Insert: {
           created_at?: string
           email?: string | null
-          id?: number
+          id?: string
           interval?: string | null
           is_subscribed?: boolean | null
           stripe_customer?: string | null
@@ -76,7 +76,7 @@ export type Database = {
         Update: {
           created_at?: string
           email?: string | null
-          id?: number
+          id?: string
           interval?: string | null
           is_subscribed?: boolean | null
           stripe_customer?: string | null

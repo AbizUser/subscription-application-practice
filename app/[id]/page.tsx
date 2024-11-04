@@ -11,7 +11,7 @@ import { extractYouTubeVideoId } from '@/utils/extractYouTubeVideoId';
 //ジェネリクスで定義することによって型の参照が可能に
 
 const getDetailLesson =  async (
-  id: string,
+  id: number,
   supabase: SupabaseClient<Database>
 ) => {
   const { data: lesson } = await supabase
@@ -23,7 +23,7 @@ const getDetailLesson =  async (
 };
 
 const getPremiumContent =  async (
-  id: string,
+  id: number,
   supabase: SupabaseClient<Database>
 ) => {
   const { data: video } = await supabase
@@ -34,7 +34,7 @@ const getPremiumContent =  async (
   return video; 
 }
 
-const LessonDatailPage = async ({ params }: { params: { id: string } }) => {
+const LessonDatailPage = async ({ params }: { params: { id: number } }) => {
   const supabase = createServerComponentClient<Database>({ cookies }); //SCで呼び出す場合にはcookiesを引数に呼び出す必要がある。※SSR
   const [lesson, video] = await Promise.all([
     await getDetailLesson(params.id, supabase),
