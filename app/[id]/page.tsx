@@ -10,10 +10,10 @@ import { extractYouTubeVideoId } from '@/utils/extractYouTubeVideoId';
 
 //ジェネリクスで定義することによって型の参照が可能に
 
-const LessonDatailPage = async ({ params }: { params: { id: number } }) => {
+const LessonDatailPage = async ({ params }: { params: { id: any } }) => {
 
 const getDetailLesson =  async (
-  id: number,
+  id: any,
   supabase: SupabaseClient<Database>
 ) => {
   const { data: lesson } = await supabase
@@ -25,7 +25,7 @@ const getDetailLesson =  async (
 };
 
 const getPremiumContent =  async (
-  id: number,
+  id: any,
   supabase: SupabaseClient<Database>
 ) => {
   const { data: video } = await supabase
