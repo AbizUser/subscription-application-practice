@@ -10,7 +10,7 @@ import { extractYouTubeVideoId } from '@/utils/extractYouTubeVideoId';
 
 //ジェネリクスで定義することによって型の参照が可能に
 
-const LessonDatailPage = async ({ params }: { params: { id: string } }) => {
+const LessonDatailPage = async ({ params }: { params: { id: number } }) => {
 
 const getDetailLesson =  async (
   id: number,
